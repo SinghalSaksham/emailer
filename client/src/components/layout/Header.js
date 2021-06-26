@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { Link } from 'react-router-dom';
 import Logo from './partials/Logo';
+import { useHistory } from 'react-router-dom';
 
 const propTypes = {
   navPosition: PropTypes.string,
@@ -11,6 +12,8 @@ const propTypes = {
   bottomOuterDivider: PropTypes.bool,
   bottomDivider: PropTypes.bool
 }
+
+const history = useHistory();
 
 const defaultProps = {
   navPosition: '',
@@ -120,7 +123,7 @@ const Header = ({
                       className="list-reset header-nav-right"
                     >
                       <li>
-                        <Link to="#0" className="button button-primary button-wide-mobile button-sm" onClick={closeMenu}>Sign Out</Link>
+                        <Link to="#0" className="button button-primary button-wide-mobile button-sm" onClick={() => history.push('/')}>Sign Out</Link>
                       </li>
                     </ul>}
                 </div>

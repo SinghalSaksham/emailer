@@ -105,6 +105,15 @@ export default function SignInSide() {
             >
               Sign In
             </Button>
+            <Button
+              type="submit"
+              fullWidth
+              variant="contained"
+              color="primary"
+              className={classes.submit}
+            >
+              Google Login
+            </Button>
             <Grid container>
               <Grid item>
                 <Link href="http://localhost:3000/register" variant="body2">
