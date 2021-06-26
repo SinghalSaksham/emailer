@@ -13,17 +13,17 @@ export const createMail=async(req,res)=>{
         var transporter = nodemailer.createTransport({
             service: 'gmail',
             auth: {
-              user: req.user.email,
-              pass: req.user.password
+              user: `${req.body.user}`,
+              pass:`${req.body.pass}`
             }
           });
 
           var mailOptions = {
-            from: req.user.email,
-            to: req.body.to,
-            cc:req.body.cc,
-            subject: req.body.subject,
-            text: req.body.message
+            from: `${req.user.email}`,
+            to: `${req.body.to}`,
+            cc:`${req.body.cc}`,
+            subject: `${req.body.subject}`,
+            text: `${req.body.message}`
           };
           
           transporter.sendMail(mailOptions, function(error, info){
