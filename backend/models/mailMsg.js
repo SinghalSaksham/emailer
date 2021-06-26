@@ -1,11 +1,11 @@
 import mongoose from 'mongoose';
 
 const mailSchema = mongoose.Schema({
-    from: String,
     to: String,
     cc: String,
     subject: String,
     message: String,
+    from: String,
     createdAt: {
         type: Date,
         default: new Date(),
