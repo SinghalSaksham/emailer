@@ -1,9 +1,6 @@
 const express = require('express')
-// import bodyParser from 'body-parser';
 var bodyParser = require('body-parser')
-// import mongoose from 'mongoose';
 const mongoose = require('mongoose');
-// import cors from 'cors';
 var cors = require('cors')
 
 import mailRoutes from './routes/mails.js';

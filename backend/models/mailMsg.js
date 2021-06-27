@@ -1,5 +1,4 @@
 import mongoose from "mongoose";
-// const express = require('express')
 
 const mailSchema = mongoose.Schema({
   to: { type: String, required: true },

@@ -1,7 +1,4 @@
 import express from 'express';
-import mongoose from 'mongoose';
-
-// const MailMessage =require( '../models/mailMsg');
 import MailMessage from '../models/mailMsg.js';
 
 const router = express.Router();

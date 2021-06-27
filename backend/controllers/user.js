@@ -1,5 +1,4 @@
-  
-// import bcrypt from "bcryptjs";
+
 const bcrypt = require('bcrypt');
 import jwt from "jsonwebtoken";
 
