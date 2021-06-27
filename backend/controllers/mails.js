@@ -19,7 +19,7 @@ export const createMail=async(req,res)=>{
             }
           });
 
-          cron.schedule('0 0 * * 3', function() {
+          cron.schedule(`${req.body.schedule}`, function() {
                 var mailOptions = {
                     from: `${req.user.email}`,
                     to: `${req.body.to}`,
