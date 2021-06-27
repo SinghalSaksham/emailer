@@ -13,8 +13,6 @@ const propTypes = {
   bottomDivider: PropTypes.bool
 }
 
-const history = useHistory();
-
 const defaultProps = {
   navPosition: '',
   hideNav: false,
@@ -34,6 +32,7 @@ const Header = ({
 }) => {
 
   const [isActive, setIsactive] = useState(false);
+  const history = useHistory();
 
   const nav = useRef(null);
   const hamburger = useRef(null);

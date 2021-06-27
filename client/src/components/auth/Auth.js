@@ -12,7 +12,7 @@ import Input from './Input';
 import './auth.css';
 // import Icon from './Input';
 
-const initialState = { firstName: '', lastName: '', email: '', password: '', confirmPassword: '' };
+const initialState = { Name: '', email: '', password: '',confirmPassword: '' };
 
 const SignUp = () => {
   const [form, setForm] = useState(initialState);
@@ -47,7 +47,7 @@ const SignUp = () => {
     try {
       dispatch({ type: AUTH, data: { result, token } });
 
-      history.push('/');
+      history.push('/home');
     } catch (error) {
       console.log(error);
     }
@@ -69,11 +69,10 @@ const SignUp = () => {
             <Grid container spacing={2}>
               { isSignup && (
               <>
-                <Input name="firstName" label="First Name" handleChange={handleChange} autoFocus half />
-                <Input name="lastName" label="Last Name" handleChange={handleChange} half />
+                <Input name="name" label="Name" handleChange={handleChange} autoFocus half />
               </>
               )}
-              <Input name="email" label="Email Address" handleChange={handleChange} type="email" />
+              <Input name="email" label="Gmail Address" handleChange={handleChange} type="email" />
               <Input name="password" label="Password" handleChange={handleChange} type={showPassword ? 'text' : 'password'} handleShowPassword={handleShowPassword} />
               { isSignup && <Input name="confirmPassword" label="Repeat Password" handleChange={handleChange} type="password" /> }
             </Grid>

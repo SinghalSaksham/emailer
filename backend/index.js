@@ -1,7 +1,10 @@
-import express from 'express';
-import bodyParser from 'body-parser';
-import mongoose from 'mongoose';
-import cors from 'cors';
+const express = require('express')
+// import bodyParser from 'body-parser';
+var bodyParser = require('body-parser')
+// import mongoose from 'mongoose';
+const mongoose = require('mongoose');
+// import cors from 'cors';
+var cors = require('cors')
 
 import mailRoutes from './routes/mails.js';
 import userRouter from "./routes/user.js";
