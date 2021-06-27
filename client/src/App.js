@@ -12,6 +12,7 @@ import LayoutDefault from "./layouts/LayoutDefault";
 
 // Views
 import Home from "./views/Home";
+import mails from "./components/history/Mails";
 
 ReactGA.initialize(process.env.REACT_APP_GA_CODE);
 
@@ -39,6 +40,7 @@ const App = () => {
         <Switch>
           <Route exact path="/" component={Auth} />
           <Route path="/compose" component={Compose}/>
+          <Route path="/history" component={mails}/>
           <AppRoute exact path="/home" component={Home} layout={LayoutDefault} />
         </Switch>
       )}

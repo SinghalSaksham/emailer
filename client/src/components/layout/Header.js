@@ -114,7 +114,7 @@ const Header = ({
                       navPosition && `header-nav-${navPosition}`
                     )}>
                     <li>
-                      <Link to="/home" onClick={closeMenu}>Sent Mails</Link>
+                      <Link to="/home" onClick={closeMenu}>Home</Link>
                     </li>
                   </ul>
                   <ul className={
@@ -123,7 +123,16 @@ const Header = ({
                       navPosition && `header-nav-${navPosition}`
                     )}>
                     <li>
-                      <Link to="/compose">Sent Mails</Link>
+                      <Link to="/compose">Compose Mail</Link>
+                    </li>
+                  </ul>
+                  <ul className={
+                    classNames(
+                      'list-reset text-xs',
+                      navPosition && `header-nav-${navPosition}`
+                    )}>
+                    <li>
+                      <Link to="/history">Sent Mails</Link>
                     </li>
                   </ul>
                   {!hideSignin &&
