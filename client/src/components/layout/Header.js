@@ -114,7 +114,16 @@ const Header = ({
                       navPosition && `header-nav-${navPosition}`
                     )}>
                     <li>
-                      <Link to="#0" onClick={closeMenu}>Sent Mails</Link>
+                      <Link to="/home" onClick={closeMenu}>Sent Mails</Link>
+                    </li>
+                  </ul>
+                  <ul className={
+                    classNames(
+                      'list-reset text-xs',
+                      navPosition && `header-nav-${navPosition}`
+                    )}>
+                    <li>
+                      <Link to="/compose">Sent Mails</Link>
                     </li>
                   </ul>
                   {!hideSignin &&
@@ -122,7 +131,7 @@ const Header = ({
                       className="list-reset header-nav-right"
                     >
                       <li>
-                        <Link to="#0" className="button button-primary button-wide-mobile button-sm" onClick={() => history.push('/')}>Sign Out</Link>
+                        <Link to="/signin" className="button button-primary button-wide-mobile button-sm" onClick={() => history.push('/')}>Sign Out</Link>
                       </li>
                     </ul>}
                 </div>

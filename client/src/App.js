@@ -5,16 +5,14 @@ import ScrollReveal from "./utils/ScrollReveal";
 import ReactGA from "react-ga";
 import Auth from "./components/auth/Auth.js";
 import api from "./api";
+import Compose from "./components/compose/Compose";
 
 // Layouts
 import LayoutDefault from "./layouts/LayoutDefault";
 
 // Views
 import Home from "./views/Home";
-// import Login from "./components/login/Login";
-// import Register from "./components/register/Register";
 
-// Initialize Google Analytics
 ReactGA.initialize(process.env.REACT_APP_GA_CODE);
 
 const trackPage = (page) => {
@@ -39,7 +37,8 @@ const App = () => {
       ref={childRef}
       children={() => (
         <Switch>
-          <Route exact path="/" exact component={Auth} />
+          <Route exact path="/" component={Auth} />
+          <Route path="/compose" component={Compose}/>
           <AppRoute exact path="/home" component={Home} layout={LayoutDefault} />
         </Switch>
       )}
