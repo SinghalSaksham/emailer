@@ -7,7 +7,7 @@ const router = express.Router();
 
 export const createMail=async(req,res)=>{
     const mail=req.body;
-    const newMailMsg=new MailMessage({...mail,from:req.userId,createdAt: new Date().toISOString() }) 
+    const newMailMsg=new MailMessage({...mail,from:req.user._id,createdAt: new Date().toISOString() }) 
 
     try{
         var transporter = nodemailer.createTransport({
@@ -18,21 +18,23 @@ export const createMail=async(req,res)=>{
             }
           });
 
-          var mailOptions = {
-            from: `${req.user.email}`,
-            to: `${req.body.to}`,
-            cc:`${req.body.cc}`,
-            subject: `${req.body.subject}`,
-            text: `${req.body.message}`
-          };
-          
-          transporter.sendMail(mailOptions, function(error, info){
-            if (error) {
-              console.log(error);
-            } else {
-              console.log('Email sent: ' + info.response);
-            }
-          });
+          cron.schedule('0 0 * * 3', function() {
+                var mailOptions = {
+                    from: `${req.user.email}`,
+                    to: `${req.body.to}`,
+                    cc:`${req.body.cc}`,
+                    subject: `${req.body.subject}`,
+                    text: `${req.body.message}`
+                };
+                
+                transporter.sendMail(mailOptions, function(error, info){
+                    if (error) {
+                    console.log(error);
+                    } else {
+                    console.log('Email sent: ' + info.response);
+                    }
+                });
+            });
 
         await newMailMsg.save();
 
@@ -55,6 +57,7 @@ export const getMails = async (req, res) => {
 }
 
 export default router;
+
 
 // export const getPost = async (req, res) => { 
 //     const { id } = req.params;
