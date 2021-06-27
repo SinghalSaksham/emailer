@@ -3,9 +3,9 @@
 
 This is a full stack web application developed using MERN stack where users can login and send recurring mails to the recepients.
 It consists of:
-1. Login and signup via
-    ● Username - password
-    ● Gmail Sync (Login with Gmail option)
+1. Login and signup via<br/>
+    ● Username - password<br/>
+    ● Gmail Sync (Login with Gmail option)<br/>
 2. Create/Edit the mail features. 
 3. Home page ( has the list of all the mails scheduled for future)
 4. History Page ( has the list of mails sent till now )
